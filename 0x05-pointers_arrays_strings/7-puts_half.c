@@ -1,27 +1,34 @@
 #include "holberton.h"
-/**
-* puts_half - prints second half
-*@str: char
-*Return: always 0
-*/
 
+/**
+* puts_half - prints half of a string
+* followed by a new line
+* @str: string to be printed
+*/
 void puts_half(char *str)
 {
-int count;
+int len, n, i;
 
-while (*str != '\0')
+len = 0;
+
+while (str[len] != '\0')
 {
-count++;
-str++;
+len++;
 }
-if (count % 2 == 0)
-count =  count / 2;
-else
-count = (count - 1) / 2;
 
-str = str - count;
-for (; *str != '\0'; str++)
-_putchar(*str);
-
+if (len % 2 == 0)
+{
+for (i = len / 2; str[i] != '\0'; i++)
+{
+_putchar(str[i]);
+}
+}
+else if (len % 2)
+{
+for (n = (len - 1) / 2; n < len - 1; n++)
+{
+_putchar(str[n + 1]);
+}
+}
 _putchar('\n');
 }
