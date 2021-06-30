@@ -1,1 +1,1 @@
-					__THESE README CONTAINS THE PROJECT FOR ALX C - More pointers, arrays and strings__
+#THESE README CONTAINS THE PROJECT FOR ALX C - More pointers, arrays and strings
