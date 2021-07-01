@@ -18,4 +18,13 @@ Task 7: a function that encodes a string into 1337.
 
 # Advance Task
 
-Task 8
+Task 8: a function that encodes a string using rot13.
+
+Task 9: a function that prints an integer.
+
+Task 10: magic.cpp
+
+Task 11: a function that adds two numbers.
+
+Task 12: a function that prints a buffer.
+
