@@ -21,7 +21,6 @@ length1 = length;
 for (x = 0; x < n && *src; dest++, src++, length++, x++)
 {
 *dest = *src;
-
 }
 if (length1 + n >= length)
 *(dest + length) = '\0';
