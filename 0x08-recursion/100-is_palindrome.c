@@ -1,60 +1,44 @@
 #include "holberton.h"
 
 /**
-* is_palindrome -  sss
-* @r: string
-* Return: return something
-*/
-
-int is_palindrome(char *r)
-{
-
-int i, size, add;
-
-i = 0;
-add = 0;
-
-size = _strlen_recursion(r);
-add = (size % 2 != 0) ? 2 : 1;
-return (evaluate(r, i, size - 1, add));
-}
-
-/**
-* evaluate - compare
-* @i: i
-* @size: size
-* @s: string
-* @add: addition depending if n is odd or even
-* Return: return value
-*/
-int evaluate(char *s, int i, int size, int add)
-{
-
-if (i + add == size  && s[i] == s[size])
-{
-return (1);
-}
-
-else if (s[i] == s[size])
-{
-return (evaluate(s, i + 1, size - 1, add));
-}
-
-return (0);
-}
-
-/**
-* _strlen_recursion - legth of a string
-* @s: string
-* Return: return legth
+* _strlen_recursion - returns the length of a string
+* @s: input string
+* Return: length of s
 */
 
 int _strlen_recursion(char *s)
 {
-/*Base condition*/
 if (!*s)
 return (0);
+return (1 + _strlen_recursion(++s));
+}
 
-else
-return (1 + _strlen_recursion(s + 1)); /*Sum 1*/
+/**
+* isPalRec - helper function for is_palindrome
+* @str: input string
+* @s: start index
+* @e: end index
+* Return: 1 if true, 0 if false
+*/
+int isPalRec(char str[], int s, int e)
+{
+if (s == e)
+return (1);
+if (str[s] != str[e])
+return (0);
+if (s < e + 1)
+return (isPalRec(str, s + 1, e - 1));
+return (1);
+}
+
+/**
+* is_palindrome - returns 1 if a string is a palindrome and 0 if not
+* @s: input string
+* Return: 1 if true, 0 if false
+*/
+int is_palindrome(char *s)
+{
+int len = _strlen_recursion(s) - 1;
+
+return (isPalRec(s, 0, len));
 }
